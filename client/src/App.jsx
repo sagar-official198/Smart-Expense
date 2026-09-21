@@ -4,6 +4,7 @@ import Navbar from "./Component/navbar.jsx";
 import Login from "./Component/Login.jsx";
 import Signup from "./Component/Signup.jsx";
 import Expenses from "./Component/Expenses.jsx";
+import Dashboard from "./Component/Dashboard.jsx";
 
 function Home() {
   const token = localStorage.getItem("Token");
@@ -53,6 +54,9 @@ function App() {
 
         {/* Expenses */}
         <Route path="/expenses" element={<Expenses />} />
+
+        {/* Dashboard */}
+        <Route path="/dashboard" element={<Dashboard />} />
 
         {/* Keep this if your Navbar uses /add-expense */}
         <Route path="/add-expense" element={<Expenses />} />

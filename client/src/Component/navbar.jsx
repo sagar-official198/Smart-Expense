@@ -482,7 +482,7 @@ function Navbar() {
                   <span className="text-sm font-bold text-slate-800">
                     {salaryLoading
                       ? "Loading..."
-                      : `$${formattedSalary}`}
+                      : `₹${formattedSalary}`}
                   </span>
 
                 </button>

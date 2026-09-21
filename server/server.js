@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
 import expenseRoutes from "./routes/expenseRoutes.js";
 import salaryRoutes from "./routes/salary.js";
+import dashboardRoutes from "./routes/dashboard.js";
 
 dotenv.config();
 
@@ -31,6 +32,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/expenses", expenseRoutes);
 
 app.use("/api/user/salary", salaryRoutes);
+
+app.use("/api/dashboard", dashboardRoutes);
 
 
 // =========== Test Route ===========

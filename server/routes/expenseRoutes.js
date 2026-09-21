@@ -1,4 +1,5 @@
 import express from "express";
+
 import {
     createExpense,
     getExpenses,
@@ -6,16 +7,21 @@ import {
     updateExpense,
     deleteExpense,
 } from "../controllers/expense.js";
-import { isAuthenticated } from "../middleware/auth.js"; // adjust path/name to your actual middleware
+
+import { isAuthenticated } from "../middleware/isAuthenticated.js";
 
 const router = express.Router();
 
-router.use(isAuthenticated); // protect all expense routes
+router.use(isAuthenticated);
 
 router.post("/", createExpense);
+
 router.get("/", getExpenses);
+
 router.get("/:id", getExpenseById);
+
 router.put("/:id", updateExpense);
+
 router.delete("/:id", deleteExpense);
 
 export default router;
