@@ -3,20 +3,36 @@ const userSchema = new mongoose.Schema(
     {
         username: {
             type: String,
-            require: true,
+            required: true,
             trim: true
         },
         email: {
             type: String,
-            require: true,
+            required: true,
             trim: true,
             unique: true
         },
         password: {
             type: String,
-            require: true,
+            required: true,
             trim: true,
         },
+        balance: {
+            type: Number,
+            required: true,
+        },
+        salary: {
+            type: Number,
+            required: true,
+        },
+        totalexpence: {
+            type: Number,
+            required: true,
+        },
+        savings: {
+            type: Number,
+            required: true,
+        }
     },
     { timestamps: true }
 )

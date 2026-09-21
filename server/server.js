@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
 import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
+import expenseRoutes from "./routes/expenseRoutes.js";
+import salaryRoutes from "./routes/salary.js";
 
 dotenv.config();
 
@@ -25,6 +27,11 @@ app.use(cookieParser());
 // =========== Routes ===========
 
 app.use("/api/auth", authRoutes);
+
+app.use("/api/expenses", expenseRoutes);
+
+app.use("/api/user/salary", salaryRoutes);
+
 
 // =========== Test Route ===========
 
