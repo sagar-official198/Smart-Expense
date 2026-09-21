@@ -1,10 +1,20 @@
 import Navbar from './Component/navbar.jsx'
-import { TrendingUp, ArrowUpRight, ArrowDownRight, Wallet, PieChart } from 'lucide-react'
+
+import Signup from './Component/Signup.jsx'
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col">
       <Navbar />
+
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+
+
+
 
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {/* Welcome Header */}

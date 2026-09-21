@@ -13,6 +13,7 @@ import {
   CreditCard,
   User,
 } from "lucide-react";
+import Signup from "./Signup";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -66,16 +67,14 @@ function Navbar() {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
-                    active
-                      ? "bg-blue-50 text-blue-600 font-semibold shadow-xs"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/80"
-                  }`}
+                  className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${active
+                    ? "bg-blue-50 text-blue-600 font-semibold shadow-xs"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/80"
+                    }`}
                 >
                   <Icon
-                    className={`w-4 h-4 ${
-                      active ? "text-blue-600" : "text-slate-400 group-hover:text-slate-600"
-                    }`}
+                    className={`w-4 h-4 ${active ? "text-blue-600" : "text-slate-400 group-hover:text-slate-600"
+                      }`}
                   />
                   <span>{link.name}</span>
                 </Link>
@@ -120,7 +119,7 @@ function Navbar() {
 
             {/* Get Started CTA */}
             <button
-              onClick={() => navigate("/register")}
+              onClick={() => navigate("/Signup")}
               className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg text-white bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-sm shadow-blue-500/25 transition-all duration-200 hover:shadow-md hover:shadow-blue-500/35 active:scale-98"
             >
               <span>Get Started</span>
@@ -164,11 +163,10 @@ function Navbar() {
                   key={link.name}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    active
-                      ? "bg-blue-50 text-blue-600 font-semibold"
-                      : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-                  }`}
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${active
+                    ? "bg-blue-50 text-blue-600 font-semibold"
+                    : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                    }`}
                 >
                   <Icon
                     className={`w-4 h-4 ${active ? "text-blue-600" : "text-slate-400"}`}
