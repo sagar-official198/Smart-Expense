@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="smart-expense-puce.vercel.app">
+  <a href="https://smart-expense-beryl.vercel.app">
     <strong>🚀 Live Demo</strong>
   </a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -25,7 +25,7 @@
 ### 🚀 Live Application
 
 **Frontend:**  
-smart-expense-puce.vercel.app
+https://smart-expense-beryl.vercel.app
 
 ### 🔗 Backend API
 
