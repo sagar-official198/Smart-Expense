@@ -31,7 +31,7 @@ export default function Dashboard() {
 
     const API_URL =
         import.meta.env.VITE_API_URL ||
-        "http://localhost:5000/api";
+        "https://smart-expense-m50r.onrender.com";
 
     const fetchDashboard = async () => {
         try {
@@ -63,7 +63,7 @@ export default function Dashboard() {
 
             setError(
                 error.response?.data?.message ||
-                    "Failed to load dashboard"
+                "Failed to load dashboard"
             );
         } finally {
             setLoading(false);
@@ -270,11 +270,10 @@ export default function Dashboard() {
                         </div>
 
                         <p
-                            className={`text-2xl font-bold ${
-                                balance < 0
+                            className={`text-2xl font-bold ${balance < 0
                                     ? "text-red-600"
                                     : "text-slate-900"
-                            }`}
+                                }`}
                         >
                             {formatCurrency(balance)}
                         </p>
@@ -441,8 +440,8 @@ export default function Dashboard() {
                                                             }
                                                             fill={
                                                                 pieColors[
-                                                                    index %
-                                                                        pieColors.length
+                                                                index %
+                                                                pieColors.length
                                                                 ]
                                                             }
                                                         />
@@ -481,8 +480,8 @@ export default function Dashboard() {
                                                         style={{
                                                             backgroundColor:
                                                                 pieColors[
-                                                                    index %
-                                                                        pieColors.length
+                                                                index %
+                                                                pieColors.length
                                                                 ],
                                                         }}
                                                     />

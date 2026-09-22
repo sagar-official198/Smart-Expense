@@ -13,7 +13,7 @@ export default function Login() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    const API = "http://localhost:5000";
+    const API = "https://smart-expense-m50r.onrender.com";
 
     const navigate = useNavigate();
 

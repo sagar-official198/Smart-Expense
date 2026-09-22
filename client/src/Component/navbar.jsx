@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 const API_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+  import.meta.env.VITE_API_URL || "https://smart-expense-m50r.onrender.com";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -176,7 +176,7 @@ function Navbar() {
 
       setSalaryError(
         error.response?.data?.message ||
-          "Unable to load salary"
+        "Unable to load salary"
       );
     } finally {
       setSalaryLoading(false);
@@ -292,7 +292,7 @@ function Navbar() {
 
       setSalaryError(
         error.response?.data?.message ||
-          "Failed to update salary. Please try again."
+        "Failed to update salary. Please try again."
       );
     } finally {
       setSalarySaving(false);
@@ -428,19 +428,17 @@ function Navbar() {
                     <Link
                       key={link.name}
                       to={link.path}
-                      className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium transition-all ${
-                        active
+                      className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium transition-all ${active
                           ? "bg-blue-50 text-blue-600 font-semibold shadow-xs"
                           : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
-                      }`}
+                        }`}
                     >
 
                       <Icon
-                        className={`w-4 h-4 ${
-                          active
+                        className={`w-4 h-4 ${active
                             ? "text-blue-600"
                             : "text-slate-400"
-                        }`}
+                          }`}
                       />
 
                       <span>
@@ -703,11 +701,10 @@ function Navbar() {
                       onClick={() =>
                         setMobileMenuOpen(false)
                       }
-                      className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium ${
-                        active
+                      className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium ${active
                           ? "bg-blue-50 text-blue-600 font-semibold"
                           : "text-slate-600 hover:bg-slate-100"
-                      }`}
+                        }`}
                     >
 
                       <Icon className="w-4 h-4" />

@@ -19,7 +19,7 @@ function Expenses() {
     const fetchExpenses = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/expenses",
+                "https://smart-expense-m50r.onrender.com/api/expenses",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -68,8 +68,8 @@ function Expenses() {
             setLoading(true);
 
             const url = editingId
-                ? `http://localhost:5000/api/expenses/${editingId}`
-                : "http://localhost:5000/api/expenses";
+                ? `https://smart-expense-m50r.onrender.com/api/expenses/${editingId}`
+                : "https://smart-expense-m50r.onrender.com/api/expenses";
 
             const method = editingId ? "PUT" : "POST";
 
@@ -138,7 +138,7 @@ function Expenses() {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/api/expenses/${id}`,
+                `https://smart-expense-m50r.onrender.com/api/expenses/${id}`,
                 {
                     method: "DELETE",
                     headers: {

@@ -38,7 +38,7 @@ export default function Analytics() {
 
     const API_URL =
         import.meta.env.VITE_API_URL ||
-        "http://localhost:5000/api";
+        "https://smart-expense-m50r.onrender.com";
 
     // ---------------------------------------
     // FETCH ANALYTICS
@@ -82,7 +82,7 @@ export default function Analytics() {
 
             setError(
                 error.response?.data?.message ||
-                    "Failed to load analytics."
+                "Failed to load analytics."
             );
         } finally {
             setLoading(false);
@@ -599,8 +599,8 @@ export default function Analytics() {
                                                             }
                                                             fill={
                                                                 pieColors[
-                                                                    index %
-                                                                        pieColors.length
+                                                                index %
+                                                                pieColors.length
                                                                 ]
                                                             }
                                                         />
@@ -639,8 +639,8 @@ export default function Analytics() {
                                                         style={{
                                                             backgroundColor:
                                                                 pieColors[
-                                                                    index %
-                                                                        pieColors.length
+                                                                index %
+                                                                pieColors.length
                                                                 ],
                                                         }}
                                                     />
@@ -907,8 +907,8 @@ export default function Analytics() {
                                             width: `${Math.min(
                                                 salary > 0
                                                     ? (totalExpenses /
-                                                          salary) *
-                                                          100
+                                                        salary) *
+                                                    100
                                                     : 0,
                                                 100
                                             )}%`,
