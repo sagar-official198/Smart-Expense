@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Signup() {
+    const navigate = useNavigate();
+
     const [showPassword, setShowPassword] = useState(false);
 
     const [formData, setFormData] = useState({
@@ -31,7 +34,8 @@ export default function Signup() {
 
             alert("Account created successfully");
 
-            window.location.href = "/login";
+            // React Router navigation
+            navigate("/login");
         } catch (error) {
             console.error(
                 "Signup error:",
@@ -40,7 +44,7 @@ export default function Signup() {
 
             alert(
                 error.response?.data?.message ||
-                "Failed to create account"
+                    "Failed to create account"
             );
         }
     };
@@ -102,7 +106,11 @@ export default function Signup() {
 
                         <div className="relative">
                             <input
-                                type={showPassword ? "text" : "password"}
+                                type={
+                                    showPassword
+                                        ? "text"
+                                        : "password"
+                                }
                                 name="password"
                                 value={formData.password}
                                 onChange={handleChange}
@@ -113,7 +121,9 @@ export default function Signup() {
 
                             <button
                                 type="button"
-                                onClick={() => setShowPassword(!showPassword)}
+                                onClick={() =>
+                                    setShowPassword(!showPassword)
+                                }
                                 className="absolute right-3 top-4"
                             >
                                 {showPassword ? (
@@ -125,7 +135,7 @@ export default function Signup() {
                         </div>
                     </div>
 
-                    {/* Register button */}
+                    {/* Register Button */}
                     <button
                         type="submit"
                         className="w-full bg-black text-white font-semibold rounded-lg py-3 mt-2 hover:bg-gray-800 transition"
