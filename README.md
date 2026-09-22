@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://smart-expense-tau-two.vercel.app">
+  <a href="smart-expense-puce.vercel.app">
     <strong>🚀 Live Demo</strong>
   </a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
