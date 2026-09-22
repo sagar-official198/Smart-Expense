@@ -62,7 +62,7 @@ export default function Analytics() {
             }
 
             const response = await axios.get(
-                `${API_URL}/analytics`,
+                `${API_URL}/api/analytics`,
                 {
                     params: {
                         period: selectedPeriod,

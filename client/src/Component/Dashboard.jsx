@@ -46,7 +46,7 @@ export default function Dashboard() {
             }
 
             const response = await axios.get(
-                `${API_URL}/dashboard`,
+                `${API_URL}/api/dashboard`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -271,8 +271,8 @@ export default function Dashboard() {
 
                         <p
                             className={`text-2xl font-bold ${balance < 0
-                                    ? "text-red-600"
-                                    : "text-slate-900"
+                                ? "text-red-600"
+                                : "text-slate-900"
                                 }`}
                         >
                             {formatCurrency(balance)}

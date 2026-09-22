@@ -249,7 +249,7 @@ function Navbar() {
       setSalaryError("");
 
       const response = await axios.put(
-        `${API_URL}/user/salary`,
+        `${API_URL}/api/user/salary`,
         {
           salary: salaryNumber,
         },
@@ -429,15 +429,15 @@ function Navbar() {
                       key={link.name}
                       to={link.path}
                       className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium transition-all ${active
-                          ? "bg-blue-50 text-blue-600 font-semibold shadow-xs"
-                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                        ? "bg-blue-50 text-blue-600 font-semibold shadow-xs"
+                        : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                         }`}
                     >
 
                       <Icon
                         className={`w-4 h-4 ${active
-                            ? "text-blue-600"
-                            : "text-slate-400"
+                          ? "text-blue-600"
+                          : "text-slate-400"
                           }`}
                       />
 
@@ -702,8 +702,8 @@ function Navbar() {
                         setMobileMenuOpen(false)
                       }
                       className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium ${active
-                          ? "bg-blue-50 text-blue-600 font-semibold"
-                          : "text-slate-600 hover:bg-slate-100"
+                        ? "bg-blue-50 text-blue-600 font-semibold"
+                        : "text-slate-600 hover:bg-slate-100"
                         }`}
                     >
 
