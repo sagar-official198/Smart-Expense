@@ -25,7 +25,7 @@
 ### 🚀 Live Application
 
 **Frontend:**  
-https://smart-expense-tau-two.vercel.app
+smart-expense-puce.vercel.app
 
 ### 🔗 Backend API
 
