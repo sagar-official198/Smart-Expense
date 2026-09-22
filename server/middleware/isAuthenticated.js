@@ -3,12 +3,22 @@ import User from "../model/user.js";
 
 export const isAuthenticated = async (req, res, next) => {
     try {
-        // Get token from cookie OR Authorization header
-        const token =
-            req.cookies?.token ||
-            (req.headers.authorization?.startsWith("Bearer ")
-                ? req.headers.authorization.split(" ")[1]
-                : null);
+        // Prefer Authorization header
+        let token = null;
+
+        const authHeader = req.headers.authorization;
+
+        if (
+            authHeader &&
+            authHeader.startsWith("Bearer ")
+        ) {
+            token = authHeader.split(" ")[1];
+        }
+
+        // Fallback to cookie
+        if (!token && req.cookies?.token) {
+            token = req.cookies.token;
+        }
 
         if (!token) {
             return res.status(401).json({
@@ -16,16 +26,14 @@ export const isAuthenticated = async (req, res, next) => {
             });
         }
 
-        // Verify JWT
         const decoded = jwt.verify(
             token,
             process.env.JWT_SECRET
         );
 
-        // Find user
-        const user = await User.findById(decoded.id).select(
-            "-password"
-        );
+        const user = await User.findById(
+            decoded.id
+        ).select("-password");
 
         if (!user) {
             return res.status(401).json({
@@ -33,13 +41,14 @@ export const isAuthenticated = async (req, res, next) => {
             });
         }
 
-        // Attach user to request
         req.user = user;
 
         next();
-
     } catch (error) {
-        console.error("Authentication error:", error);
+        console.error(
+            "Authentication error:",
+            error
+        );
 
         return res.status(401).json({
             message: "Invalid or expired token",

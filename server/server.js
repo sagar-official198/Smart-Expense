@@ -7,6 +7,7 @@ import connectDB from "./config/db.js";
 import expenseRoutes from "./routes/expenseRoutes.js";
 import salaryRoutes from "./routes/salary.js";
 import dashboardRoutes from "./routes/dashboard.js";
+import analyticsRoutes from "./routes/analytics.js";
 
 dotenv.config();
 
@@ -34,6 +35,8 @@ app.use("/api/expenses", expenseRoutes);
 app.use("/api/user/salary", salaryRoutes);
 
 app.use("/api/dashboard", dashboardRoutes);
+
+app.use("/api/analytics", analyticsRoutes);
 
 
 // =========== Test Route ===========
