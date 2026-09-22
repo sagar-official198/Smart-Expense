@@ -146,7 +146,7 @@ function Navbar() {
       setSalaryError("");
 
       const response = await axios.get(
-        `${API_URL}/user/salary`,
+        `${API_URL}/api/user/salary`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
